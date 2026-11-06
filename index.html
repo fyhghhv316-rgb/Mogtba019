@@ -415,7 +415,7 @@
             loadDB();
             generateCaptcha();
             checkSession();
-            await syncAllFromSheet(); // جلب تلقائي للبيانات عبر SheetDB عند فتح الصفحة
+            await syncAllFromSheet(); // جلب تلقائي للبيانات بالإنجليزية
         });
 
         function loadDB() {
@@ -429,7 +429,7 @@
             localStorage.setItem('al_athkia_db_v7', JSON.stringify(DB));
         }
 
-        // دالة المزامنة والجلب الشاملة من SheetDB
+        // دالة المزامنة والجلب الشاملة من SheetDB باللغة الإنجليزية
         async function syncAllFromSheet() {
             if (!SHEETDB_URL) return;
             try {
@@ -944,7 +944,7 @@
             document.getElementById('modal-add-student').classList.remove('flex');
         }
 
-        // دالة حفظ الطالب مع إرسال سحابي تلقائي عبر SheetDB الخاص بك
+        // دالة حفظ الطالب بالإنجليزية
         async function saveNewStudent() {
             const name = document.getElementById('new-student-name').value.trim();
             const identifier = document.getElementById('new-student-phone').value.trim();
@@ -970,7 +970,7 @@
             DB.students.push(newStd);
             saveDB();
 
-            // إرسال البيانات فوراً لـ SheetDB لتخزينها في Google Sheets
+            // إرسال البيانات بأسماء الأعمدة الإنجليزية
             if (SHEETDB_URL) {
                 try {
                     await fetch(SHEETDB_URL, {
